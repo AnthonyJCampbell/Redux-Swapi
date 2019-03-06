@@ -5,17 +5,15 @@ import { CharacterList } from "../components";
 import { fetchCharacters } from './../actions'
 
 class CharacterListView extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   componentDidMount() {
-    console.log('fetching')
     this.props.fetchCharacters();
   }
 
   render() {
-    
     if (this.props.fetching) {
       return (
         <h1>WE'RE GETTING YOUR DAMN DATA!</h1>
@@ -32,8 +30,8 @@ class CharacterListView extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    characters: state.characters,
-    fetching: state.fetching,
+    characters: state.charsReducer.characters,
+    fetching: state.charsReducer.fetching,
   }
 }
 // our mapStateToProps needs to have two properties inherited from state

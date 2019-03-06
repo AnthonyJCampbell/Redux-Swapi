@@ -13,9 +13,7 @@ export const FAILURE = 'FAILURE';
 export const fetchCharacters = () => dispatch => {
     dispatch({ type: FETCHING });
     const request = axios.get(`https://swapi.co/api/people/`)
-    console.log("We've sent a request")
     request.then(res => {
-        console.log("GOTCHA WE HAVE THE DATA!")
         dispatch({type: SUCCESS, payload: res.data.results})
     })
     .catch(err => {
