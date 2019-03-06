@@ -88,7 +88,7 @@ ReactDOM.render(
 function myCleverAction = () => dispatch => {
   const request = axios.get('https://someRadUrlAPI.com/api/coolness);
   request.then(({data}) => {
-    dispatch({type: GET_COOL_THING, payload: data.things});
+    dispatch({type: GET_COOL_THING, payload: data.things}); 
   })
   .catch(err => {
     dispatch({type: ERROR_GETTING_THINGS, error: err});
