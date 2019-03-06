@@ -5,9 +5,6 @@ import { CharacterList } from "../components";
 import { fetchCharacters } from './../actions'
 
 class CharacterListView extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this.props.fetchCharacters();
